@@ -9,12 +9,13 @@ html{
   font-size: 16px;
 }
 
+
 .container{
-  background: blue;
+  background: #f4F5F6;
   width: 100vw;
   height: 100vh;
   display: grid;
-  grid-template-columns: minmax(200px, 1fr) 4fr;
+  grid-template-columns: minmax(200px, 1fr) minmax(auto, 4fr);
   grid-template-areas:
   "menu main";
 
@@ -72,7 +73,8 @@ html{
   cursor: pointer;
   text-transform: capitalize;
   letter-spacing: 3px;
-  color: #555;
+  background: #555;
+  color: #ddd;
   transition: 200ms;
 }
 
@@ -87,7 +89,7 @@ html{
   padding: 2rem;
   font-size: 1.4rem;
   font-weight: bold;
-  text-transform: uppercase;
+  text-transform: capitalize;
   letter-spacing: 5px;
   color: #555;
   border: none;
@@ -97,13 +99,8 @@ html{
 
 .menu .start:hover{
   background: #555;
-  color: #fff;
+  color: #ddd;
 }
-
-
-
-
-
 
 
 /***************
@@ -113,4 +110,46 @@ html{
 .main{
   grid-area: main;
   background: #f4F5F6;
+  /*justify-self: center;*/
+  /*align-self: center;*/
+  display: grid;
+  place-content: center;
+}
+
+.main .gameboard{
+  background: #00adb5;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: .4rem;
+  justify-content: center;
+  align-content: center;
+  width: clamp(100px, 50vw, 400px);
+  height: clamp(100px, 50vw, 400px);
+}
+
+.gameboard div{
+  padding: 4rem;
+  background: #f4f5f6;
+  /*background: red;*/
+  cursor: pointer;
+  position: relative;
+}
+
+.gameboard > div img{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  height: 70%;
+  display: none;
+}
+
+.gameboard .x.show{
+  display: block;
+}
+
+.gameboard .o.show{
+  display: block;
 }
