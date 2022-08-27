@@ -1,0 +1,116 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  font-family: verdana;
+  font-size: 16px;
+}
+
+.container{
+  background: blue;
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: minmax(200px, 1fr) 4fr;
+  grid-template-areas:
+  "menu main";
+
+}
+
+/***************
+   menu styles
+****************/
+
+.menu{
+  grid-area: menu;
+  background: #00adb5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu h1, .menu h3, .menu label{
+  text-transform: capitalize;
+  color: #fff;
+}
+
+.menu h1{
+  align-self: stretch;
+  text-align: center;
+  padding: 2rem 0;
+  background: #555;
+  letter-spacing: 5px;
+  margin-bottom: auto;
+}
+
+.menu .player-info{
+  display: grid;
+  grid-row-gap: 1rem;
+  padding: 1rem;
+}
+
+.player-info h3{
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.player-info input,
+.player-info .save{
+  font-size: 1.2rem;
+  padding: .5rem 1rem;
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+}
+
+.player-info .save{
+  border: none;
+  cursor: pointer;
+  text-transform: capitalize;
+  letter-spacing: 3px;
+  color: #555;
+  transition: 200ms;
+}
+
+.player-info .save:hover{
+  background: #ccc;
+  color: #000;
+}
+
+.menu .start{
+  margin-top: auto;
+  width: 100%;
+  padding: 2rem;
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  color: #555;
+  border: none;
+  transition: 200ms;
+  cursor: pointer;
+}
+
+.menu .start:hover{
+  background: #555;
+  color: #fff;
+}
+
+
+
+
+
+
+
+/***************
+   main styles
+****************/
+
+.main{
+  grid-area: main;
+  background: #f4F5F6;
+}
