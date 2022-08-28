@@ -128,15 +128,18 @@ html{
   height: clamp(100px, 50vw, 400px);
 }
 
-.gameboard div{
-  padding: 4rem;
+.gameboard .cell{
+  padding: 3rem;
   background: #f4f5f6;
   /*background: red;*/
   cursor: pointer;
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.gameboard > div img{
+.gameboard > .cell img{
   position: absolute;
   top: 50%;
   left: 50%;
