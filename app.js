@@ -1,4 +1,6 @@
-// gameboard module
+
+//---------- gameboard module -------------//
+
 const gameboard = (function(){
   const cells = Array.from(document.querySelectorAll(".cell"));
   let board = ["","","",
@@ -48,21 +50,28 @@ const gameboard = (function(){
 
 })();
 
-// gameboard.render()
 
-// create player factory
-const createPlayer = function(name, marker){
+//----------- create player factory---------//
+
+const playerFactory = function(name, marker){
   return {
     name,
     marker
   }
 }
 
-// game module
+
+//-------------- game module --------------//
+
 const game = (function(){
+
+  const saveBtns = document.querySelectorAll(".save");
+  const playerOneInput = document.getElementById("playerone");
+  const playerTwoInput = document.getElementById("playertwo");
   // create players
-  let playerOne = createPlayer("star","x");
-  let playerTwo = createPlayer("jin", "o");
+  let playerOne = playerFactory("star", "x");
+  let playerTwo = playerFactory("jin", "o");
+
 
   // set starting point
   let currentplayer = playerOne;
@@ -83,7 +92,8 @@ const game = (function(){
 
   // checkwinner function
    function checkWinner() {
-        winningAxes.forEach((item, index) => { // [0, 1, 2, 3, 4, 5, 6, 7]
+        winningAxes.forEach((item, index) => {
+            // [0, 1, 2, 3, 4, 5, 6, 7]
             if (gameboard.board[item[0]] === this.currentplayer.marker && gameboard.board[item[1]] === this.currentplayer.marker && gameboard.board[item[2]] === this.currentplayer.marker) {
                 console.log('winner!');
                 alert(`${this.currentplayer.name} wins!`);
@@ -126,6 +136,8 @@ const game = (function(){
 })();
 
 
-
+// console.log(game);
+// console.log(playerOne);
+// console.log(playerTwo);
 
 
