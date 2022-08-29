@@ -126,10 +126,14 @@ html{
   align-content: center;
   width: clamp(100px, 50vw, 400px);
   height: clamp(100px, 50vw, 400px);
+  display: none;
+}
+
+.main .gameboard.show{
+  display: grid;
 }
 
 .gameboard .cell{
-  padding: 3rem;
   background: #f4f5f6;
   /*background: red;*/
   cursor: pointer;
@@ -139,20 +143,26 @@ html{
   align-items: center;
 }
 
+.gameboard .cell:hover{
+  background: #eee;
+}
+
 .gameboard > .cell img{
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 70%;
-  height: 70%;
   display: none;
 }
 
-.gameboard .x.show{
+.gameboard .cell.showx .x{
   display: block;
+  width: 50%;
+  height: 50%;
 }
 
-.gameboard .o.show{
+.gameboard .cell.showo .o{
   display: block;
+  width: 40%;
+  height: 40%;
 }
